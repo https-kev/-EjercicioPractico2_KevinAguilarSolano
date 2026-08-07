@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+    <head>
+
+        <title>Citas Médicas</title>
+
+    </head>
+
+
+    <body>
+
+
+        <h1>
+            Citas programadas
+        </h1>
+
+
+        <table border="1">
+
+
+            <tr>
+
+                <th>Paciente</th>
+                <th>Especialidad</th>
+                <th>Fecha</th>
+                <th>Estado</th>
+                <th>Acciones</th>
+
+            </tr>
+
+
+
+            <tr th:each="cita : ${citas}">
+
+
+                <td th:text="${cita.paciente.nombre}">
+                </td>
+
+
+                <td th:text="${cita.especialidad}">
+                </td>
+
+
+                <td th:text="${cita.fechaHora}">
+                </td>
+
+
+                <td th:text="${cita.estado}">
+                </td>
+
+
+
+                <td>
+
+
+                    <a th:href="@{/medico/completar/{id}(id=${cita.id})}">
+
+                        Completar
+
+                    </a>
+
+
+                    |
+
+                    <a th:href="@{/medico/cancelar/{id}(id=${cita.id})}">
+
+                        Cancelar
+
+                    </a>
+
+
+                </td>
+
+
+            </tr>
+
+
+        </table>
+
+
+
+        <br>
+
+
+        <a th:href="@{/medico}">
+            Regresar
+        </a>
+
+
+    </body>
+
+</html>

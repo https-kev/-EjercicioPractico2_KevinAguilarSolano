@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+
+    <head>
+
+        <title>Panel Administrador</title>
+
+    </head>
+
+
+    <body>
+
+
+        <h1>
+            Panel Administrador Medicare
+        </h1>
+
+
+        <p>
+            Bienvenido administrador
+        </p>
+
+
+
+        <hr>
+
+
+
+        <a th:href="@{/admin/usuarios}">
+            Gestionar usuarios
+        </a>
+
+
+        <br><br>
+
+
+        <a th:href="@{/admin/citas}">
+            Gestionar citas
+        </a>
+
+
+        <br><br>
+
+
+
+        <form th:action="@{/logout}"
+              method="post">
+
+            <button type="submit">
+                Cerrar sesión
+            </button>
+
+        </form>
+
+
+    </body>
+
+</html>

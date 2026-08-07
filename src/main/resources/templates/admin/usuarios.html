@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+
+    <head>
+
+        <title>Usuarios</title>
+
+    </head>
+
+
+    <body>
+
+
+        <h1>
+            Usuarios registrados
+        </h1>
+
+
+
+        <table border="1">
+
+
+            <tr>
+
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Email</th>
+                <th>Rol</th>
+
+            </tr>
+
+
+
+            <tr th:each="usuario : ${usuarios}">
+
+
+                <td th:text="${usuario.id}">
+                </td>
+
+
+                <td th:text="${usuario.nombre}">
+                </td>
+
+
+                <td th:text="${usuario.email}">
+                </td>
+
+
+                <td th:text="${usuario.rol.nombre}">
+                </td>
+
+
+
+            </tr>
+
+
+        </table>
+
+
+
+        <br>
+
+
+        <a th:href="@{/admin}">
+            Volver
+        </a>
+
+
+    </body>
+
+
+</html>

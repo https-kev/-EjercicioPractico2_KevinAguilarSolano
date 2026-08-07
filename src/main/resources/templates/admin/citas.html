@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+
+    <head>
+
+        <title>Citas</title>
+
+    </head>
+
+
+    <body>
+
+
+        <h1>
+            Todas las citas
+        </h1>
+
+
+
+        <table border="1">
+
+
+            <tr>
+
+                <th>Paciente</th>
+                <th>Especialidad</th>
+                <th>Fecha</th>
+                <th>Estado</th>
+
+            </tr>
+
+
+
+            <tr th:each="cita : ${citas}">
+
+
+                <td th:text="${cita.paciente.nombre}">
+                </td>
+
+
+                <td th:text="${cita.especialidad}">
+                </td>
+
+
+                <td th:text="${cita.fechaHora}">
+                </td>
+
+
+                <td th:text="${cita.estado}">
+                </td>
+
+
+            </tr>
+
+
+        </table>
+
+
+
+        <br>
+
+
+        <a th:href="@{/admin}">
+            Volver
+        </a>
+
+
+    </body>
+
+
+</html>
